@@ -1,9 +1,13 @@
 <%- include('./partials/head') %>
-
-<ul>
-  <% data.forEach(person => { %>
-    <li><a href="./squad/<%= person.id %>"><%= person.squad_id %></a></li>
-  <% }) %>
-</ul>
-
+<section>
+  <div class="grid">
+    
+    <% data.forEach(person => { %>
+      <div class="card" >
+        <a href="./person/<%= person.name %>"><%= person.name %></a>
+      </div>
+    <% }) %>
+  </div>
+</section>
+<script src="/script.js"></script>
 <%- include('./partials/foot') %>
