@@ -1,42 +1,16 @@
+// Bepaal alle hexadecimale kleurcodes die een kleur kan hebben
+const colors = ["9DE5A4", "FFBABA", "3D5E85", "EE9DF0", "656262", "ECEE89", "A2FAE5", "272222", "FB8888", "B7FF95", "E385CF", "B4CCF0"];
 
-// bepaal alle hexidecimalen die een kleurecode kan hebben
-const hexCharacters = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
-
-// haal hexcharachters op
-function getCharacter(index) {
-    return hexCharacters[index];
-}
-
-// bepaal met een random math 
+// Haal een willekeurige kleur op uit de array
 function generateNewColor() {
-    let hexColorRep;
-
-    do {
-        hexColorRep = "#";
-
-        // Generate pastel colors by ensuring that the components are relatively close to each other
-        const componentValue = Math.floor(Math.random() * 128) + 128; // Range: 128-255
-
-        // Generate red component
-        const redComponent = Math.floor(Math.random() * 64) + componentValue; // Range: componentValue to componentValue+64
-        hexColorRep += redComponent.toString(16).padStart(2, '0');
-
-        // Generate green component
-        const greenComponent = Math.floor(Math.random() * 64) + componentValue; // Range: componentValue to componentValue+64
-        hexColorRep += greenComponent.toString(16).padStart(2, '0');
-
-        // Generate blue component
-        const blueComponent = Math.floor(Math.random() * 64) + componentValue; // Range: componentValue to componentValue+64
-        hexColorRep += blueComponent.toString(16).padStart(2, '0');
-    } while (hexColorRep === '#ffffff' || hexColorRep === '#000000');
-
-    return hexColorRep;
+    const randomIndex = Math.floor(Math.random() * colors.length);
+    return '#' + colors[randomIndex];
 }
 
 function cardcolor() {
-    // haal de class card op
+    // Haal de elementen met de class "card" op
     const cardElements = document.querySelectorAll(".card");
-    // voor elke card, genereer een ander background
+    // Voor elke kaart, genereer een andere achtergrondkleur
     cardElements.forEach(function(card) {
         card.style.background = generateNewColor();
     });
