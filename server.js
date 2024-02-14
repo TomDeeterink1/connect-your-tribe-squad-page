@@ -7,7 +7,7 @@ import fetchJson from './helpers/fetch-json.js'
 const apiUrl = 'https://fdnd.directus.app/items'
 
 // Haal alle squads uit de WHOIS API op
-const squadData = await fetchJson(apiUrl + '/squad/3/')
+const squadData = await fetchJson(apiUrl + '/person/?filter={"squad_id"}:3')
 
 // Maak een nieuwe express app aan
 const app = express()
@@ -23,12 +23,11 @@ app.use(express.static('public'))
 // Maak een GET route voor de index
 app.get('/', function (request, response) {
   // Haal alle personen uit de FDND API op
-  fetchJson(apiUrl + '/person').then((data) => {
+  fetchJson(apiUrl + '/person/?filter={"squad_id":3}').then((data) => {
     // Render index.ejs uit de views map en geef uit FDND API opgehaalde data mee
     response.render('index', data)
   })
 })
-
 
 
 // Maak een POST route voor de index

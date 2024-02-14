@@ -1,5 +1,15 @@
 <%- include('./partials/head') %>
 <section>
+  <h1>Welcome to the squadpage of 1D</h1>
+  <div class="filters">
+    <select>
+      <option value="None">No filter</option>
+      <option value="Name">Name</option>
+      <option value="Surname">Surname</option>
+    </select>
+  </div>
+</section>
+<section>
   <div class="grid">
     
     <% data.forEach(person => { %>
@@ -10,4 +20,6 @@
   </div>
 </section>
 <script src="/script.js"></script>
+<script src="/filter.js"></script>
 <%- include('./partials/foot') %>
+  

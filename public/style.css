@@ -28,21 +28,113 @@
   --radius-medium: 8px;
   --radius-large: 12px;
   --radius-extra-large: 16px;
+
+}
+/* main styling of headings */
+h1{
+  font-size: 56px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 800;
+}
+
+h2{
+  font-size: 46px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 600;
+}
+
+p{
+  font-size: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+
+}
+
+/* start of page */
+section{
+  scroll-behavior: smooth;
+  max-width: 1280px;
+
+  margin: 0 auto;
+  padding: var(--large) var(--medium);
+
+  & select{
+    padding: var(--small) var(--medium);
+    text-indent: 0px;
+    background-color: var(--main);
+    border-radius: var(--button);
+    width: 200px;
+  }
 }
 .grid{
   max-width: 1280px;
   margin: 0 auto;
-  display: grid;
   display: grid; 
   grid-auto-flow: column; 
   grid-template-columns: 1fr 1fr 1fr; 
-  grid-template-rows: repeat(26, 1fr);
+  grid-template-rows: repeat(7, 1fr);
   gap: 32px 32px; 
+  grid-template-areas: 
+  "a b c"
+  "d d f"
+  "g h i"
+  "j k k"
+  "m n o"
+  "p p q"
+  "t u v"
+  "w y y"; 
 
   & .card{
     border-radius: var(--radius-medium);
     width: 100%;
     height: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    transition: ease-out 0.1s;
+
+    :hover, :focus-visible ,:focus-within{
+      background-color: var(--primary);
+      width: 100%;
+      height: 200px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      border-radius: var(--radius-medium);
+      transition: ease-in 0.2s;
+    }
+
+    & a{
+      color: var(--main);
+      text-decoration: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    /* this css determines the layout of the grid. */
+      &:nth-child(0) { grid-area: a; }
+      &:nth-child(1) { grid-area: b; }
+      &:nth-child(2) { grid-area: c; }
+      &:nth-child(3) { grid-area: d; }
+      &:nth-child(4) { grid-area: f; }
+      &:nth-child(5) { grid-area: g; }
+      &:nth-child(6) { grid-area: h; }
+      &:nth-child(7) { grid-area: i; }
+      &:nth-child(8) { grid-area: j; }
+      &:nth-child(9) { grid-area: k; }
+      &:nth-child(10) { grid-area: k; }
+      &:nth-child(11) { grid-area: m; }
+      &:nth-child(12) { grid-area: n; }
+      &:nth-child(13) { grid-area: o; }
+      &:nth-child(14) { grid-area: p; }
+      &:nth-child(15) { grid-area: q; }
+      &:nth-child(16) { grid-area: t; }
+      &:nth-child(17) { grid-area: u; }
+      &:nth-child(18) { grid-area: v; }
     
   }
 }
