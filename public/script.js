@@ -18,3 +18,5 @@ function cardcolor() {
 
 // haal de cardcolor op
 cardcolor();
+
+
