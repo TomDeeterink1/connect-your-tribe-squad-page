@@ -1,13 +1,32 @@
 
-// // Import the entire contents of script.js
-// import * as script from '/script.js';
 
-function filter(){
-    let selector = document.getElementsByClassName('.filter');
-    let selectedValue = selector.value;
+function filter() {
+    const selector = document.querySelector('.filter');
 
-    if (selectedValue === 'name') {
-        console.log(selectedValue)
-    } ;
+    selector.addEventListener('change', function() {
+        let selectedValue = this.value;
+        if (selectedValue === 'none') {
+
+            console.log('no filter')
+
+        } else{
+
+            if (selectedValue === 'name') {
+                console.log('this is a name')
+            } 
+            
+                else {
+                    if (selectedValue === 'surname') {
+                        console.log('this is a surename')
+                    } else{
+                        
+                        console.log('no filter')
+                    }
+                    
+            }
+        }
+        
+    });
 }
 
+filter();

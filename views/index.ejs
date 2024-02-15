@@ -1,6 +1,6 @@
 <%- include('./partials/head') %>
 <section>
-  <h1>Welcome to the squadpage of 1D</h1>
+  <h1> Squadpage of 1D</h1>
   <div class="filters">
     <select class="filter">
       <option value="none">No filter</option>
@@ -14,12 +14,16 @@
     
     <% data.forEach(person => { %>
       <div class="card" >
-        <a href="./person/<%= person.name %>"><%= person.name %></a>
+        
+        <a href="<%= person.link %>"><%= person.name %></a>
       </div>
     <% }) %>
+
   </div>
 </section>
+
 <script src="/script.js"></script>
-<script src="/filter.js"></script>
+<script src="/filter.js"></script>\
+
 <%- include('./partials/foot') %>
   
