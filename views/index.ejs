@@ -14,8 +14,8 @@
     
     <% data.forEach(person => { %>
       <div class="card" >
-        
-        <a href="<%= person.link %>"><%= person.name %></a>
+        <img src="<%= person.avatar %>" alt="">
+        <p ><%= person.name %></p>
       </div>
     <% }) %>
 

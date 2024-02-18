@@ -1,5 +1,5 @@
 // Bepaal alle hexadecimale kleurcodes die een kleur kan hebben
-const colors = ["9DE5A4", "FFBABA", "3D5E85", "EE9DF0", "ECEE89", "A2FAE5", "FB8888", "B7FF95", "E385CF", "B4CCF0"];
+const colors = ["F4F1E6", "F4F1E6", "F8D351", "F4F1E6", "EFA73A", "E6473D", "45BDF1"];
 
 // Haal een willekeurige kleur op uit de array
 function generateNewColor() {
