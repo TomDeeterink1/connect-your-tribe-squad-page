@@ -69,6 +69,7 @@ section{
     position: fixed;
     height: 200px;
     border-radius: var(--small);
+    
     & select{
       padding: var(--small) var(--medium);
       text-indent: 0px;
