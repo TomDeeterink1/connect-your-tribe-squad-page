@@ -1,18 +1,7 @@
 <%- include('./partials/head') %>
 <section>
-
-</section>
-
-<section>
   <h1> Squadpage of 1D</h1>
   <div class="filters ">
-    <select class="filter">
-      <option value="none">No filter</option>
-      <option value="name">Name</option>
-      <option value="surname">Surname</option>
-    </select>
-  </div>
-  <div class="filters ss">
     <select class="filter">
       <option value="none">No filter</option>
       <option value="name">Name</option>
@@ -26,7 +15,7 @@
     <% data.forEach(person => { %>
       <div class="card" >
         <img src="<%= person.avatar %>" alt="">
-        <p ><%= person.name %></p>
+        <a href= "/detail/<%= person.id %>" > <%= person.name %> </a>
       </div>
     <% }) %>
 
@@ -34,7 +23,7 @@
 </section>
 
 <script src="/script.js"></script>
-<script src="/filter.js"></script>\
+<script src="/filter.js"></script>
 
 <%- include('./partials/foot') %>
   

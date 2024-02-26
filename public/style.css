@@ -69,6 +69,8 @@ section{
     position: fixed;
     height: 200px;
     border-radius: var(--small);
+
+  }
     
     & select{
       padding: var(--small) var(--medium);
@@ -92,7 +94,7 @@ section{
   }
   
   }
-}
+
 .grid{
   margin: 0 auto;
   margin-top: -64px;
@@ -122,7 +124,7 @@ section{
       object-fit: cover;
       box-shadow:  0.8px 1.7px 3.7px hsla(0, 0%, 0%, 0.44);
     }
-    & p{
+    & a{
 
       color: black;
       text-decoration: none;

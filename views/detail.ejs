@@ -1,0 +1,33 @@
+<%- include('./partials/head') %>
+<section>
+  <a href="/index/"> Go back</a>
+  <h1> Detail page of of <%= detail.name %></h1>
+</section>
+<section>
+  <div class="container">
+      <div class="card" >
+        <img src="<%= detail.avatar %>" alt="">
+        <a href= "#" > <%= detail.name %> </a>
+      </div>
+  </div>
+</section>
+<section>
+  <div class="form ">
+    <form>
+      <label>
+        Laat een berichtje achter
+        <textarea required name="textbox"></textarea>
+      </label>
+        <button type="submit"> Verstuur bericht</button>
+    </form>
+  </div>
+  <div class="--result ">
+    <p></p>
+  </div>
+</section>
+
+<script src="/script.js"></script>
+<script src="/filter.js"></script>
+
+<%- include('./partials/foot') %>
+  
