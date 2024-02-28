@@ -3,6 +3,8 @@ import express from 'express'
 // Importeer de zelfgemaakte functie fetchJson uit de ./helpers map
 import fetchJson from './helpers/fetch-json.js'
 
+
+
 // Stel het basis endpoint in
 const apiUrl = 'https://fdnd.directus.app/items'
 
@@ -11,6 +13,11 @@ const squadData = await fetchJson(apiUrl + '/person/?filter={"squad_id"}:3')
 
 // Maak een nieuwe express app aan
 const app = express()
+
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 
 // Stel ejs in als template engine
 app.set('view engine', 'ejs')
@@ -29,20 +36,23 @@ app.get('/', function (request, response) {
   })
 })
 
-
-// Maak een POST route voor de index
-app.post('/', function (request, response) {
-  // Er is nog geen afhandeling van POST, redirect naar GET op /
-  response.redirect(303, '/')
-})
+const messagess = [];
 
 // Maak een GET route voor een detailpagina met een request parameter id
 app.get('/detail/:id', function (request, response) {
   // Gebruik de request parameter id en haal de juiste persoon uit de WHOIS API op
   fetchJson('https://fdnd.directus.app/items/person/' + request.params.id).then((apiData) => {
     // Render detail.ejs uit de views map en geef de opgehaalde data mee als variable, genaamd person
-    response.render('detail', {detail: apiData.data, squads: squadData.data  } )
+    response.render('detail', {detail: apiData.data, squads: squadData.data, messages: messagess  } )
   })
+})
+
+// Maak een POST route voor de detail
+app.post('/detail/:id', function (request, response) {
+  // Er is nog geen afhandeling van POST, redirect naar GET op /
+  messagess.push(request.body.textbox)
+  response.redirect(303, '/detail/' + request.params.id)
+
 })
 // Stel het poortnummer in waar express op moet gaan luisteren
 app.set('port', process.env.PORT || 8000)

@@ -1,33 +1,42 @@
 <%- include('./partials/head') %>
-<section>
-  <a href="/index/"> Go back</a>
-  <h1> Detail page of of <%= detail.name %></h1>
-</section>
-<section>
-  <div class="container">
-      <div class="card" >
-        <img src="<%= detail.avatar %>" alt="">
-        <a href= "#" > <%= detail.name %> </a>
-      </div>
-  </div>
-</section>
-<section>
-  <div class="form ">
-    <form>
-      <label>
-        Laat een berichtje achter
-        <textarea required name="textbox"></textarea>
-      </label>
-        <button type="submit"> Verstuur bericht</button>
-    </form>
-  </div>
-  <div class="--result ">
-    <p></p>
-  </div>
-</section>
+<div class="detail-wrapper">
+  <section>
+    <a href="/"><i class="fa-solid fa-chevron-left"></i> Go back</a>
+    <h1> Detail page of <%= detail.name %></h1>
+  </section>
+  <section>
+    <div class="container">
+        <div class="card" >
+          <img src="<%= detail.avatar %>" alt="">
+          <p> <%= detail.name %> </p>
+        </div>
+    </div>
+  </section>
+  <section>
+    <div class="form ">
+      <form method="post" action="/detail/<%= detail.id %>">
+        <label>
+          Laat een berichtje achter
+          <textarea required name="textbox"></textarea>
+        </label>
+          <button type="submit"> Verstuur bericht</button>
+  
+      </form>
+    </div>
+    <div class="--result ">
+      <h3>Alle berichten</h3>
+      <ul> 
+        <% messages.forEach(message => { %>
+         <li><%= message %></li> 
+         <% }) %>
+      </ul>
+    </div>
+  </section>
+  
+  <script src="/script.js"></script>
+  <script src="/filter.js"></script>
+</div>
 
-<script src="/script.js"></script>
-<script src="/filter.js"></script>
 
 <%- include('./partials/foot') %>
   

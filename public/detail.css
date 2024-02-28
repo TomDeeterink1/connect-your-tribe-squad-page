@@ -1,9 +1,27 @@
 /* start of page */
-section{
+.detail-wrapper{
+  & section{
     scroll-behavior: smooth;
     max-width: 1200px;
     margin: 0 auto;
-    padding: var(--large) var(--medium);
+    padding: var(--medium) var(--medium);
+    &:first-child{
+      padding: var(--large);
+    }
+    & a{
+        padding: var(--buttons);
+        background-color: var(--main);
+        border-radius: var(--button);
+        border: 1px solid var(--primary);
+        color: var(--primary);
+        text-decoration: var(--none);
+        &:hover{
+            box-shadow:  0.8px 1.7px 3.7px hsla(0, 0%, 0%, 0.14);
+        }
+    }
+    & h1{
+      margin-bottom: var(--small);
+    }
     & .form{
       background-color: var(--main);
       width: min-content;
@@ -12,21 +30,55 @@ section{
       margin-bottom: var(--medium);
       height: min-content;
       border-radius: var(--small);
-  
+        & form{
+            & textarea{
+                padding: var(--button);
+                font-family: inherit;
+                font-size: 1em;
+            }
+            & button{
+                margin-top: var(--medium);
+                padding: var(--buttons);
+                background-color: var(--main);
+                border-radius: var(--button);
+                border: 1px solid var(--primary);
+                color: var(--primary);
+                text-decoration: var(--none);
+                &:hover{
+                    cursor: pointer;
+                    box-shadow:  0.8px 1.7px 3.7px hsla(0, 0%, 0%, 0.14);
+                }
+            }
+        }
     }
 
     & .--result{
         background-color: var(--main);
-      width: min-content;
+      width: max-content;
       box-shadow: 0.8px 1.7px 3.7px hsl(0deg 0% 0% / 0.24);
       padding: var(--medium);
       height: min-content;
       border-radius: var(--small);
+      & h3{
+        text-decoration: underline 2px solid var(--secondary);
+        text-underline-offset: 6px;
+      }
+      & p{
+        font-size: 1em;
+        font-family: inherit;
+      }
+      & ul{
+        list-style: nummeric;
+        padding-inline-start: 1em;
+         & li{
+
+         }
+      }
     }
   
     }
     
-  .container{
+  & .container{
     max-width: min-content;
     display: flex; 
   
@@ -48,8 +100,7 @@ section{
         object-fit: cover;
         box-shadow:  0.8px 1.7px 3.7px hsla(0, 0%, 0%, 0.44);
       }
-      & a{
-  
+      & p{
         color: black;
         text-decoration: none;
         font-family: Arial, Helvetica, sans-serif;
@@ -67,20 +118,27 @@ section{
       }
     }
   }
+}
+
   
   @media (max-width: 1200px) and (min-width: 500px){
-    section{
-      max-width: 712px;
-  
+    .detail-wrapper{
+      & section{
+        max-width: 712px;
+    
+      }
     }
   }
   
   
   @media (max-width: 500px) and (min-width: 200px){
-    section{
-      max-width: 712px;
-      & h1{
-        text-align: center;
+    .detail-wrapper{
+      & section{
+        max-width: 712px;
+        & h1{
+          text-align: center;
+        }
       }
     }
+    
   }
