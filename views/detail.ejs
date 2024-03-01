@@ -6,17 +6,24 @@
   </section>
   <section>
     <div class="container">
+
         <div class="card" >
           <img src="<%= detail.avatar %>" alt="">
           <p> <%= detail.name %> </p>
         </div>
+        <article class="details">
+          <h3> Meer info over <%= detail.name %></h3>
+          <p><%= detail.bio %></p>
+          <p> Username: <%= detail.nickname %></p>
+          <a href="<%= detail.website %>"> Website </a>
+        </article>
     </div>
   </section>
   <section>
     <div class="form ">
       <form method="post" action="/detail/<%= detail.id %>">
         <label>
-          Laat een berichtje achter
+          Laat een berichtje achter voor <%= detail.name %>
           <textarea required name="textbox"></textarea>
         </label>
           <button type="submit"> Verstuur bericht</button>

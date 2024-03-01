@@ -37,6 +37,12 @@
   font-family: Arial, Helvetica, sans-serif;
 
 }
+/* body */
+*{
+  margin: 0;
+  padding: 0;
+  /* box-sizing: border-box; */
+}
 /* main styling of headings */
 h1{
   font-size: 56px;
@@ -62,6 +68,10 @@ section{
   max-width: 1200px;
   margin: 0 auto;
   padding: var(--large) var(--medium);
+
+  & h1{
+    margin-bottom: var(--large);
+  }
   & .filters{
     background-color: var(--main);
     width: min-content;
@@ -127,6 +137,7 @@ section{
     }
     & a{
       margin-top: var(--medium);
+      margin-bottom: var(--medium);
       padding: var(--buttons);
       background-color: var(--main);
       border-radius: var(--button);
